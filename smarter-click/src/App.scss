@@ -13,7 +13,49 @@ $foregroundError: #d39292;
   text-align: center;
   background-color: $background1;
 }
-//--------header img---------------
+//------- animated arrows---------------
+.arrow {
+  width: 60px;
+  height: 82px;
+  position: absolute;
+  right: 30px;
+  margin-left: 0px;
+  bottom: 100px;
+  z-index: 999;
+}
+// arrow styles */
+.arrow path {
+  stroke: $main;
+  stroke-width: 2px;
+  fill: transparent;
+  animation: down 2s infinite;
+}
+// arrow keyframe animation */
+@keyframes down {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+// arrow animation delay */
+.arrow path.a1 {
+  animation-delay: -1s;
+}
+.arrow path.a2 {
+  animation-delay: -0.5s;
+}
+.arrow path.a3 {
+  animation-delay: 0s;
+}
+//--------------------header img-----------------------
 .logo-wrap {
   height: 100vh;
   padding-top: 100px;
@@ -32,66 +74,57 @@ $foregroundError: #d39292;
 
 //-------------------hamburger----------------------
 
-/* Position and sizing of burger button */
+// Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
   width: 36px;
   height: 30px;
   right: 36px;
   bottom: 36px;
-  // background-color: red;
 }
 
-/* Color/shape of burger icon bars */
+// burger icon bars */
 .bm-burger-bars {
   background: $foreground4;
 }
 
-/* Color/shape of burger icon bars on hover*/
+// burger icon bars on hover*/
 .bm-burger-bars-hover {
   background: $main;
 }
 
-/* Position and sizing of clickable cross button */
+// clickable cross button */
 .bm-cross-button {
   height: 24px;
   width: 24px;
 }
 
-/* Color/shape of close button cross */
+// close button cross */
 .bm-cross {
   background: $foreground3;
 }
 
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
+// Sidebar wrapper
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
 }
 
-/* General sidebar styles */
+// sidebar styles */
 .bm-menu {
   background: $background1;
   padding-top: 2.5em;
   font-size: 1.15em;
 }
 
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
+// Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
   line-height: 50px;
 }
 
-/* Individual item */
+// Individual item */
 .bm-item {
   display: inline-block;
   text-decoration: none;
@@ -121,6 +154,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 //------------Form----------------------
+// outter wrapper
 .outter-form {
   height: 100vh;
   display: flex;
@@ -137,6 +171,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   border-radius: 5px;
   background-color: #e77662;
   &:hover {
+    // hover on form div
     background-color: $main;
     transition: transform 0.5s ease;
   }
@@ -160,6 +195,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     }
   }
   .input-wrap {
+    // wrap every input
     margin: 10px 0;
     input {
       margin-top: 10px;
@@ -185,3 +221,4 @@ Note: Beware of modifying this element as it can break the animations - you shou
   align-items: center;
   justify-content: center;
 }
+// chart.js package used here
